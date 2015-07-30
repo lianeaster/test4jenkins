@@ -20,5 +20,6 @@ public class Smple {
         Thread.sleep(2000);
         WebElement firstLink = driver.findElement(By.xpath("//*[@id='rso']/div[2]/div[1]/div/div/div/span"));
         Assert.assertEquals(firstLink.isEnabled(), true);
+        driver.close();
     }
 }
