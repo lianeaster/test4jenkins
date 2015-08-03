@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 /**
  * Created by ademenkova on 7/27/2015.
@@ -11,7 +13,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class Smple {
     @Test
     public void checkIfGoogleSearchAWord() throws InterruptedException {
-        WebDriver driver = new FirefoxDriver();
+        DesiredCapabilities capability = DesiredCapabilities.firefox();
+        WebDriver driver = new RemoteWebDriver(capability);
         driver.get("http://www.google.com.ua");
         WebElement element = driver.findElement(By.id("lst-ib"));
         element.sendKeys("foo bar");
